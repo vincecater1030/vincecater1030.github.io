@@ -1,357 +1,347 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!doctype html>
+    <title>정형진 | VFX 3D Asset Artist / Developer</title>
+    <meta name="description" content="VFX 3D Asset Artist 15년, 그리고 DevOps 개발자 정형진의 포트폴리오" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <html>
-      <title>W3.CSS CV Template</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
+    <style>
+      /* 글꼴 : 영어는 Raleway, 한글은 Pretendard */
+      body,
+      h1,
+      h2,
+      h3 {
+        font-family: "Raleway", "Pretendard", Arial, sans-serif;
+      }
+      body {
+        line-height: 1.65;
+        color: #000;
+      }
+      h1 {
+        letter-spacing: 6px;
+      }
+      h2 {
+        letter-spacing: 3px;
+        font-size: 1.3rem;
+        margin: 0 0 24px;
+      }
+      h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+      ul,
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: inherit;
+      }
+      section {
+        margin-bottom: 96px;
+      }
 
-      <style>
-        html,
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-family: "Roboto", sans-serif;
-        }
+      /* 프로필 사진 (흑백) */
+      .photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
 
-        .cv-grid {
-          display: grid;
+      /* 제목줄 : 왼쪽 회사, 오른쪽 날짜 */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2px 16px;
+      }
+      .row span {
+        margin-left: 8px;
+        font-weight: 400;
+        color: #777;
+        font-size: 0.92rem;
+      }
+      .row time {
+        color: #777;
+        font-size: 0.92rem;
+      }
+      .item {
+        padding: 16px 0;
+        border-bottom: 1px solid #ddd;
+      }
+      .item p {
+        margin: 4px 0 0;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      /* 프로젝트 링크 칸 */
+      .links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .links a {
+        padding: 20px;
+        border: 1px solid #000;
+        text-decoration: none;
+        text-align: center;
+      }
+      .links a:hover {
+        background: #000;
+        color: #fff;
+      }
+
+      /* 스킬 막대 */
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 40px;
+      }
+      .skills li {
+        margin: 10px 0;
+        font-size: 0.93rem;
+      }
+      .skills .bar {
+        height: 5px;
+        background: #e5e5e5;
+        margin-top: 4px;
+      }
+      .skills .bar i {
+        display: block;
+        height: 100%;
+        background: #000;
+      }
+
+      /* 모바일 */
+      @media (max-width: 600px) {
+        .links,
+        .skills {
           grid-template-columns: 1fr;
-          gap: 16px;
         }
+      }
+    </style>
+  </head>
 
-        @media (min-width: 601px) {
-          .cv-grid {
-            grid-template-columns: 1fr 2fr;
-          }
-        }
-      </style>
+  <body>
+    <div class="w3-content" style="max-width: 1100px">
+      <!-- 맨 위 : 이름 + 메뉴 -->
+      <header class="w3-panel w3-center" style="padding: 96px 16px 64px">
+        <img class="photo w3-grayscale" src="myIMG/profile.png" alt="정형진 프로필 사진" />
+        <h1 class="w3-large w3-opacity" style="margin-top: 32px">Developer (Entry-level) / VFX 3D ASSET ARTIST</h1>
+        <h1 class="w3-opacity">정형진 Jeong Hyeongjin</h1>
+        <p class="w3-opacity">010 4118 1830</p>
+        <p class="w3-opacity">vincecater1030@gmail.com</p>
+        <p class="w3-opacity">경기도 성남시 분당구</p>
 
-      <body class="w3-light-grey">
-        <!-- Page Container -->
+        <div class="w3-padding-32">
+          <nav class="w3-flex w3-border" style="display: inline-flex">
+            <a href="#about" class="w3-button">About</a>
+            <a href="#skills" class="w3-button">Skills</a>
+            <a href="#dev" class="w3-button">Developer</a>
+            <a href="#vfx" class="w3-button">VFX</a>
+            <a href="#edu" class="w3-button w3-hide-small">Education</a>
+          </nav>
+        </div>
+      </header>
 
-        <main class="w3-content w3-margin-top" style="max-width: 1400px">
-          <!-- Grid -->
-
-          <div class="cv-grid w3-padding">
-            <!-- Left Column -->
-
-            <div>
-              <div class="w3-white w3-text-grey w3-card-4">
-                <div class="w3-display-container">
-                  <img
-                    src="/w3images/avatar_hat.jpg"
-                    style="width: 100%"
-                    alt="Jane Doe"
-                  />
-
-                  <div class="w3-display-bottomleft w3-container w3-text-black">
-                    <h2>Jane Doe</h2>
-                  </div>
-                </div>
-
-                <div class="w3-container">
-                  <p>
-                    <i
-                      class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"
-                    ></i>
-                    Designer
-                  </p>
-
-                  <p>
-                    <i
-                      class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"
-                    ></i>
-                    London, UK
-                  </p>
-
-                  <p>
-                    <i
-                      class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"
-                    ></i>
-                    ex@mail.com
-                  </p>
-
-                  <p>
-                    <i
-                      class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"
-                    ></i>
-                    1224435534
-                  </p>
-
-                  <hr />
-
-                  <p class="w3-large">
-                    <b>
-                      <i
-                        class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"
-                      ></i>
-                      Skills
-                    </b>
-                  </p>
-
-                  <p>Adobe Photoshop</p>
-
-                  <div class="w3-light-grey w3-round-xlarge w3-small">
-                    <div
-                      class="w3-container w3-center w3-round-xlarge w3-teal"
-                      style="width: 90%"
-                    >
-                      90%
-                    </div>
-                  </div>
-
-                  <p>Photography</p>
-
-                  <div class="w3-light-grey w3-round-xlarge w3-small">
-                    <div
-                      class="w3-container w3-center w3-round-xlarge w3-teal"
-                      style="width: 80%"
-                    >
-                      80%
-                    </div>
-                  </div>
-
-                  <p>Illustrator</p>
-
-                  <div class="w3-light-grey w3-round-xlarge w3-small">
-                    <div
-                      class="w3-container w3-center w3-round-xlarge w3-teal"
-                      style="width: 75%"
-                    >
-                      75%
-                    </div>
-                  </div>
-
-                  <p>Media</p>
-
-                  <div class="w3-light-grey w3-round-xlarge w3-small">
-                    <div
-                      class="w3-container w3-center w3-round-xlarge w3-teal"
-                      style="width: 50%"
-                    >
-                      50%
-                    </div>
-                  </div>
-
-                  <br />
-
-                  <p class="w3-large">
-                    <b>
-                      <i
-                        class="fa fa-globe fa-fw w3-margin-right w3-text-teal"
-                      ></i>
-                      Languages
-                    </b>
-                  </p>
-
-                  <p>English</p>
-
-                  <div class="w3-light-grey w3-round-xlarge">
-                    <div
-                      class="w3-round-xlarge w3-teal"
-                      style="height: 24px; width: 100%"
-                    ></div>
-                  </div>
-
-                  <p>Spanish</p>
-
-                  <div class="w3-light-grey w3-round-xlarge">
-                    <div
-                      class="w3-round-xlarge w3-teal"
-                      style="height: 24px; width: 55%"
-                    ></div>
-                  </div>
-
-                  <p>German</p>
-
-                  <div class="w3-light-grey w3-round-xlarge">
-                    <div
-                      class="w3-round-xlarge w3-teal"
-                      style="height: 24px; width: 25%"
-                    ></div>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column -->
-
-            <div>
-              <!-- Work Experience -->
-
-              <section class="w3-container w3-card w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16">
-                  <i
-                    class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"
-                  ></i>
-                  Work Experience
-                </h2>
-
-                <div class="w3-container">
-                  <h5 class="w3-opacity">
-                    <b>Front End Developer / w3schools.com</b>
-                  </h5>
-
-                  <h6 class="w3-text-teal">
-                    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                    Jan 2015 -
-                    <span class="w3-tag w3-teal w3-round">Current</span>
-                  </h6>
-
-                  <p>
-                    Lorem ipsum dolor sit amet. Praesentium magnam consectetur
-                    vel in deserunt aspernatur est reprehenderit sunt hic. Nulla
-                    tempora soluta ea et odio, unde doloremque repellendus iure,
-                    iste.
-                  </p>
-
-                  <hr />
-                </div>
-
-                <div class="w3-container">
-                  <h5 class="w3-opacity">
-                    <b>Web Developer / something.com</b>
-                  </h5>
-
-                  <h6 class="w3-text-teal">
-                    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                    Mar 2012 - Dec 2014
-                  </h6>
-
-                  <p>
-                    Consectetur adipisicing elit. Praesentium magnam consectetur
-                    vel in deserunt aspernatur est reprehenderit sunt hic. Nulla
-                    tempora soluta ea et odio, unde doloremque repellendus iure,
-                    iste.
-                  </p>
-
-                  <hr />
-                </div>
-
-                <div class="w3-container">
-                  <h5 class="w3-opacity">
-                    <b>Graphic Designer / designsomething.com</b>
-                  </h5>
-
-                  <h6 class="w3-text-teal">
-                    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                    Jun 2010 - Mar 2012
-                  </h6>
-
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  </p>
-
-                  <br />
-                </div>
-              </section>
-
-              <!-- Education -->
-
-              <section class="w3-container w3-card w3-white">
-                <h2 class="w3-text-grey w3-padding-16">
-                  <i
-                    class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"
-                  ></i>
-                  Education
-                </h2>
-
-                <div class="w3-container">
-                  <h5 class="w3-opacity">
-                    <b>W3Schools.com</b>
-                  </h5>
-
-                  <h6 class="w3-text-teal">
-                    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                    Forever
-                  </h6>
-
-                  <p>Web Development! All I need to know in one place</p>
-
-                  <hr />
-                </div>
-
-                <div class="w3-container">
-                  <h5 class="w3-opacity">
-                    <b>London Business School</b>
-                  </h5>
-
-                  <h6 class="w3-text-teal">
-                    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                    2013 - 2015
-                  </h6>
-
-                  <p>Master Degree</p>
-
-                  <hr />
-                </div>
-
-                <div class="w3-container">
-                  <h5 class="w3-opacity">
-                    <b>School of Coding</b>
-                  </h5>
-
-                  <h6 class="w3-text-teal">
-                    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                    2010 - 2013
-                  </h6>
-
-                  <p>Bachelor Degree</p>
-
-                  <br />
-                </div>
-              </section>
-            </div>
-
-            <!-- End Grid -->
-          </div>
-        </main>
-
-        <!-- Footer -->
-
-        <footer class="w3-container w3-teal w3-center w3-margin-top">
-          <p>Find me on social media.</p>
-
-          <i class="fa fa-facebook-official w3-hover-opacity"></i>
-          <i class="fa fa-instagram w3-hover-opacity"></i>
-          <i class="fa fa-snapchat w3-hover-opacity"></i>
-          <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-          <i class="fa fa-twitter w3-hover-opacity"></i>
-          <i class="fa fa-linkedin w3-hover-opacity"></i>
-
+      <div style="padding: 0 16px">
+        <!-- About -->
+        <section id="about">
+          <h2>About</h2>
           <p>
-            Powered by
-            <a
-              href="https://www.w3schools.com/w3css/default.asp"
-              target="_blank"
-            >
-              w3.css
-            </a>
+            VFX 3D Asset Artist로 15년간 국내외 영화와 OTT 작품의 에셋을 만들었습니다.<br />
+            지금은 AI를 활용한 Java 기반 DevOps 개발자 양성과정을 수료하고 개발자로 새 길을 걷고 있습니다.
           </p>
-        </footer>
-      </body>
-    </html>
+          <br />
+          <ul>
+            <li><b>VFX Expert</b> : 국내외 영화 / OTT / ScreenX</li>
+            <li><b>Asset &amp; Environment</b> : Modeling, Sculpt, ScanData Edit</li>
+            <li><b>Lookdev &amp; Shading</b> : ImageBase Texture, PBR Texture</li>
+            <li><b>Optimization</b> : AI Tool, ScanData Retopology/li></li>
+          </ul>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+          <h2>Skills</h2>
+          <h3>Developer</h3>
+          <ul class="skills">
+            <li>
+              Java <b style="float: right">5%</b>
+              <div class="bar"><i style="width: 5%"></i></div>
+            </li>
+            <li>
+              MySQL <b style="float: right">5%</b>
+              <div class="bar"><i style="width: 5%"></i></div>
+            </li>
+            <li>
+              CSS / HTML / JS <b style="float: right">5%</b>
+              <div class="bar"><i style="width: 5%"></i></div>
+            </li>
+          </ul>
+          <h3 style="margin-top: 32px">VFX</h3>
+          <ul class="skills">
+            <li>
+              Maya <b style="float: right">90%</b>
+              <div class="bar"><i style="width: 90%"></i></div>
+            </li>
+            <li>
+              Substance Painter <b style="float: right">90%</b>
+              <div class="bar"><i style="width: 90%"></i></div>
+            </li>
+            <li>
+              Zbrush <b style="float: right">90%</b>
+              <div class="bar"><i style="width: 90%"></i></div>
+            </li>
+            <li>
+              Mudbox <b style="float: right">90%</b>
+              <div class="bar"><i style="width: 90%"></i></div>
+            </li>
+            <li>
+              Marvelous Designer <b style="float: right">60%</b>
+              <div class="bar"><i style="width: 60%"></i></div>
+            </li>
+            <li>
+              SpeedTree <b style="float: right">50%</b>
+              <div class="bar"><i style="width: 50%"></i></div>
+            </li>
+            <li>
+              3D Coat <b style="float: right">50%</b>
+              <div class="bar"><i style="width: 50%"></i></div>
+            </li>
+            <li>
+              PhotoShop <b style="float: right">70%</b>
+              <div class="bar"><i style="width: 70%"></i></div>
+            </li>
+            <li>
+              Unreal Engine <b style="float: right">50%</b>
+              <div class="bar"><i style="width: 50%"></i></div>
+            </li>
+            <li>
+              Arnold <b style="float: right">70%</b>
+              <div class="bar"><i style="width: 70%"></i></div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 개발자 과정 + 프로젝트 -->
+        <section id="dev">
+          <h2>DevOPS Course &amp; Project</h2>
+          <div class="item">
+            <div class="row">
+              <h3>한국 소프트웨어 기술진흥협회 - KOSTA</h3>
+              <time>2026.08 - 2026.12</time>
+            </div>
+            <p>AI를 활용한 Java 기반 DevOps 개발자 양성과정 수료</p>
+          </div>
+          <div class="links">
+            <a href="todo_list/ex03_TodoList_JS.html"><i class="fa fa-link"></i> todoList</a>
+            <a href="Kosta_bank/index.html"><i class="fa fa-link"></i> KOSTA Bank</a>
+            <a href="fruits_shop_temp/index.html"><i class="fa fa-link"></i> fruits_shop_temp</a>
+            <a href="movie/index.html"><i class="fa fa-link"></i> movie</a>
+          </div>
+        </section>
+
+        <!-- VFX 포트폴리오 + 경력 -->
+        <section id="vfx">
+          <h2>VFX Portpolio &amp; Experience</h2>
+          <div class="links">
+            <a href="https://www.artstation.com/jeonghyeongjin" target="_blank" rel="noopener"
+              ><i class="fa fa-external-link"></i> ArtStation 포트폴리오</a
+            >
+          </div>
+
+          <div style="margin-top: 32px">
+            <div class="item">
+              <div class="row">
+                <h3>(주)아이엔에프엑스<span>3D ASSET · 과장</span></h3>
+                <time>2024.09 - 2025.09</time>
+              </div>
+              <p>프로젝트 [트리거], [굿뉴스]</p>
+            </div>
+            <div class="item">
+              <div class="row">
+                <h3>(주)미디어캔<span>3D ASSET · 과장</span></h3>
+                <time>2022.05 - 2024.09</time>
+              </div>
+              <p>프로젝트 [길복순], [노량], [아마존 활명수], [스터디 그룹]</p>
+            </div>
+            <div class="item">
+              <div class="row">
+                <h3>(주)트러스트스튜디오<span>3D ASSET · 과장</span></h3>
+                <time>2021.02 - 2022.04</time>
+              </div>
+              <p>프로젝트 [옥사오], [유령] 등</p>
+            </div>
+            <div class="item">
+              <div class="row">
+                <h3>(주)씨제스컬러버스튜디오<span>3D ASSET · 과장</span></h3>
+                <time>2020.09 - 2021.02</time>
+              </div>
+              <p>프로젝트 [Netflix 오징어 게임]</p>
+            </div>
+            <div class="item">
+              <div class="row">
+                <h3>(주)트러스트스튜디오<span>3D ASSET · 차장</span></h3>
+                <time>2015.12 - 2019.08</time>
+              </div>
+              <p>프로젝트 [곡성], [마스터], [창궐], [변신], [다빈치코드 VR] 등</p>
+            </div>
+            <div class="item">
+              <div class="row">
+                <h3>(주)덱스터 스튜디오<span>3D MODELING · 대리</span></h3>
+                <time>2012.08 - 2015.11</time>
+              </div>
+              <p>프로젝트 [미스터 고], [해적], [타이거 마운틴] 등</p>
+            </div>
+            <div class="item">
+              <div class="row">
+                <h3>(주)디지털아이디어<span>3D MODELING · 사원</span></h3>
+                <time>2010.07 - 2012.07</time>
+              </div>
+              <p>프로젝트 [악마를 보았다], [마이웨이], [고지전], [도둑들], [타워] 등</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section id="edu">
+          <h2>Education</h2>
+          <div class="item">
+            <div class="row">
+              <h3>한국 소프트웨어 기술진흥협회 - KOSTA</h3>
+              <time>2026.08 - 2026.12</time>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <h3>SF Film School</h3>
+              <time>2008.06 - 2009.03</time>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <h3>중앙대학교 무역학과</h3>
+              <time>2002.03 - 2014.03</time>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- 맨 아래 -->
+    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
+      <a href="mailto:vincecater1030@gmail.com" class="w3-hover-opacity"><i class="fa fa-envelope"></i></a>
+      <p style="font-size: 0.85rem">vincecater1030@gmail.com<br />© 2026 정형진</p>
+    </footer>
   </body>
 </html>
