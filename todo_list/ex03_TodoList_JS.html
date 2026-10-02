@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/App.css" />
+    <link rel="stylesheet" href="css/Editor.css" />
+    <link rel="stylesheet" href="css/Header.css" />
+    <link rel="stylesheet" href="css/List.css" />
+    <link rel="stylesheet" href="css/TodoItem.css" />
+  </head>
+  <body>
+    <div class="App">
+      <div class="Header">
+        <h3>오늘의 Plan 😊</h3>
+        <h1>2025-3-20</h1>
+      </div>
+
+      <form>
+        <div class="Editor">
+          <input type="text" placeholder="새로운 todo" />
+          <button>추가</button>
+        </div>
+      </form>
+
+      <div class="List">
+        <h4>Todo List 🌱</h4>
+        <input id="keyword" placeholder="검색어를 입력해주세요" />
+        <div class="todos_wrapper"></div>
+      </div>
+    </div>
+    <script>
+      //초기 데이터
+      let mockData = [
+        { id: 0, isDone: false, content: "React study", date: new Date().getTime() },
+        { id: 1, isDone: true, content: "친구만나기", date: new Date().getTime() },
+        { id: 2, isDone: false, content: "낮잠자기", date: new Date().getTime() },
+      ];
+      // 요일 출력을 위한 배열
+      let day = ["일", "월", "화", "수", "목", "금", "토"];
+
+      //////////////-----출력 기능-----////////////////////////////////////////////
+      onload = () => {
+        //initData(mokData) 함수 호출
+        initData(mockData);
+        // 현재 날짜를 년 월 일 요일로 출력한다.
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth() + 1;
+        let date = today.getDate();
+        let dayName = day[today.getDay()];
+
+        // Header h1을 현재로 바꾼다
+        document.querySelector(".Header h1").innerText = year + "년 " + month + "월 " + date + "일 " + dayName + "요일";
+      };
+      // 할 일 목록을 화면에 그리는 함수
+      // printData: 화면에 그릴 할 일 배열 (mockData 또는 검색 결과가 들어온다)
+
+      const initData = (printData) => {
+        let str = "";
+        printData.forEach((todo) => {
+          str += `
+              <div class="TodoItem">
+              <input type="checkbox" onchange="onUpdate(${todo.id})" ${todo.isDone ? "checked" : ""}>
+              <div class="content">${todo.content}</div>
+              <div class="date">${new Date(todo.date).toLocaleString()}</div>
+              <button onclick="todoDel(this)" name="delBtn" value="${todo.id}">삭제</button>
+              </div>`;
+        });
+        document.querySelector(".todos_wrapper").innerHTML = str;
+      };
+
+      //////////////-----추가 기능-----////////////////////////////////////////////
+
+      // id의 값을 증가 시킬 변수(초기데이터가 2까지 있으므로 3부터 시작)
+      let idIndex = 3;
+      document.querySelector(".Editor > button").addEventListener("click", function () {
+        event.preventDefault(); // 전송 기능 막기
+
+        // 입력칸에 쓴 글자 가져오기
+        let content = document.querySelector(".Editor input").value;
+
+        // 새 할 일 하나 만들기
+        let newTodo = {
+          id: idIndex,
+          isDone: false,
+          content: content,
+          date: new Date().getTime(),
+        };
+
+        // 준비된 하나의 레코드를 mokData에 push()함수를 이용해서 추가한다.
+        mockData.push(newTodo);
+        idIndex++; // 다음 할 일을 위해 id 1 증가
+        initData(mockData); //호출한다.(다시 화면 랜더링)
+      });
+
+      //////////////-----수정 기능-----////////////////////////////////////////////
+
+      const onUpdate = (targetId) => {
+        //TodoItem에서 호출할 때 전달한 id
+
+        // map함수를 이용한다. map함수의 결과를 mockData에 저장한다.
+        mockData = mockData.map((todo) => {
+          //mockData의 state의 값들 중에 targetId와 일치하는 todoitem의 isDone 변경
+          if (todo.id == targetId) {
+            if (todo.isDone == true) {
+              todo.isDone = false;
+            } else {
+              todo.isDone = true;
+            }
+          }
+
+          // 바꾼 것이든 아니든 todo를 돌려주기
+          return todo;
+        });
+        initData(mockData); //호출한다.(다시 화면 랜더링
+      };
+
+      //////////////-----삭제 기능-----////////////////////////////////////////////
+      // 삭제 버튼을 눌렀을 때 (th = 누른 그 버튼)
+      const todoDel = (th) => {
+        //filter()함수를 이용해서 삭제하려는 대상이외의 todo만 추출해서 mockData에 담든다.
+        mockData = mockData.filter((todo) => {
+          return todo.id != th.value;
+        });
+
+        initData(mockData); //호출한다.(다시 화면 랜더링)
+      };
+
+      //////////////-----검색 기능-----////////////////////////////////////////////
+      // 검색 입력칸에 글자를 쓸 때마다
+      document.querySelector("#keyword").addEventListener("keyup", () => {
+        let searchTodos = getFilterData(event.target.value);
+
+        initData(searchTodos);
+      });
+
+      // 검색어가 들어간 할 일만 골라서 돌려주는 함수
+      const getFilterData = (search) => {
+        //검색어가 없으면 mockData를 리턴한다.
+        if (search === "") {
+          return mockData;
+        }
+        //filter함수를 이용해서 search(검색어)를 포함하고 있는 todo들를 받는다
+        let result = mockData.filter((todo) => {
+          return todo.content.includes(search);
+        });
+        //filter의 결과를 리턴 한다.
+        return result;
+      };
+    </script>
+  </body>
+</html>
