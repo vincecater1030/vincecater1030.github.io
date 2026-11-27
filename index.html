@@ -92,6 +92,7 @@
       .links a {
         padding: 20px;
         border: 1px solid #000;
+        border-radius: 6px;
         text-decoration: none;
         text-align: center;
       }
@@ -119,6 +120,38 @@
         display: block;
         height: 100%;
         background: #000;
+      }
+
+      /* 대분류 제목 바탕색 (개발: 레드, VFX: 블루) */
+      .dev-title {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 6px;
+        background: rgba(196, 40, 40, 0.1);
+      }
+      .vfx-title {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 6px;
+        background: rgba(24, 95, 165, 0.1);
+      }
+      /* 중분류 제목 바탕색 */
+      .dev-sub {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 6px;
+        background: rgba(226, 75, 74, 0.03);
+      }
+
+      /* VFX 쪽은 회색으로 */
+      .gray, .gray .row span, .gray .row time, .gray .item p {
+        color: #aaa;
+      }
+      .gray .links a {
+        border-color: #ccc;
+      }
+      .gray .bar i {
+        background: #ccc;
       }
 
       /* 모바일 */
@@ -188,8 +221,8 @@
               <div class="bar"><i style="width: 5%"></i></div>
             </li>
           </ul>
-          <h3 style="margin-top: 32px">VFX</h3>
-          <ul class="skills">
+          <h3 class="gray" style="margin-top: 32px">VFX</h3>
+          <ul class="skills gray">
             <li>
               Maya <b style="float: right">90%</b>
               <div class="bar"><i style="width: 90%"></i></div>
@@ -235,10 +268,10 @@
 
         <!-- 개발자 과정 + 프로젝트 -->
         <section id="dev">
-          <h2>DevOPS Course &amp; Project</h2>
+          <h2 class="dev-title">DevOPS Course &amp; Project</h2>
           <div class="item">
             <div class="row">
-              <h3>한국 소프트웨어 기술진흥협회 - KOSTA</h3>
+              <h3 class="dev-sub">한국 소프트웨어 기술진흥협회 - KOSTA</h3>
               <time>2026.08 - 2026.12</time>
             </div>
             <p>AI를 활용한 Java 기반 DevOps 개발자 양성과정 수료</p>
@@ -253,7 +286,7 @@
           <!-- 팀 프로젝트 : DUGOUT -->
           <div class="item" style="margin-top: 32px">
             <div class="row">
-              <h3>DUGOUT<span>KBO 직관 메이트 매칭 앱 · 3인 팀</span></h3>
+              <h3 class="dev-sub">DUGOUT<span>KBO 직관 메이트 매칭 앱 · 3인 팀</span></h3>
               <time>2026.10.24 - 2026.10.30</time>
             </div>
             <p>같은 팀 팬끼리 직관 메이트를 찾고, AI로 직관 일정과 승부 예측까지 돕는 모바일 웹앱(PWA)</p>
@@ -273,14 +306,14 @@
 
         <!-- VFX 포트폴리오 + 경력 -->
         <section id="vfx">
-          <h2>VFX Portfolio &amp; Experience</h2>
-          <div class="links">
+          <h2 class="vfx-title">VFX Portfolio &amp; Experience</h2>
+          <div class="links gray">
             <a href="https://www.artstation.com/jeonghyeongjin" target="_blank" rel="noopener"
               ><i class="fa fa-external-link"></i> ArtStation 포트폴리오</a
             >
           </div>
 
-          <div style="margin-top: 32px">
+          <div class="gray" style="margin-top: 32px">
             <div class="item">
               <div class="row">
                 <h3>(주)아이엔에프엑스<span>3D ASSET · 과장</span></h3>
